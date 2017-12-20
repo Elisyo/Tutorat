@@ -5,7 +5,7 @@ package ds.candy.crush;
  * @author fguilbert
  *
  */
-public class Exercice1 {
+public class CandyCrush {
 
 	/**
 	 * Initialise le tableau
