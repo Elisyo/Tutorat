@@ -39,6 +39,7 @@ public class CandyCrush {
 	 * @param plateau
 	 */
 	public static void affichage(char [][] plateau){
+		System.out.println("------------------");
 		System.out.println(" | 1 2 3 4 5 6 7 8");
 		for(int i = 0;i<5;i++){
 			switch (i) {
@@ -64,31 +65,34 @@ public class CandyCrush {
 				System.out.print(plateau[i][j] + " ");
 			}
 			System.out.println("");
-		}
-		
+		}	
 	}
 	
 	/**
-	 * Boite à outils transformant mes lettres en int
+	 * Boite à outils transformant mes lettres en int dans un tableau
 	 * @param x
 	 * @return
 	 */
-	public static int translate(char x){
-		switch (x) {
-		case 'A':
-			return 1;
-		case 'B':
-			return 2;
-		case 'C':
-			return 3;
-		case 'D':
-			return 4;
-		case 'E':
-			return 5;
-		default:
-			break;
+	public static int [] translate(String cases){
+		int [] trans = new int [4];
+		for (int i = 0; i < cases.length(); i++) {
+			if(i==0 || i==2){
+				if(cases.charAt(i) == 'A'){
+					trans[i]  =  1;
+				}else if(cases.charAt(i) == 'B'){
+					trans[i]  =  2;
+				}else if(cases.charAt(i) == 'C'){
+					trans[i]  =  3;
+				}else if(cases.charAt(i) == 'D'){
+					trans[i]  =  4;
+				}else if(cases.charAt(i) == 'E'){
+					trans[i]  =  5;
+				}
+			}else{
+				trans[i]  = cases.charAt(3)-48;
+			}
 		}
-		return 0;
+		return trans;
 	}
 	
 	/**
@@ -97,15 +101,12 @@ public class CandyCrush {
 	 * @return
 	 */
 	public static boolean casesAdjacentes(String cases){
-		char ligneChar1 = cases.charAt(0);
-		int ligne1 = translate(ligneChar1);
-		char colonneChar1 = cases.charAt(1);
-		int colonne1 = colonneChar1-48;
+		int [] trans = translate(cases);
+		int ligne1 = trans[0];
+		int colonne1 = trans[1];
 		
-		char ligneChar2 = cases.charAt(2);
-		int ligne2 = translate(ligneChar2);;
-		char colonneChar2 = cases.charAt(3);
-		int colonne2 = colonneChar2-48;
+		int ligne2 = trans[2];
+		int colonne2 = trans[3];
 		
 		if(ligne1 == ligne2){
 			if(colonne1==colonne2-1){
@@ -130,18 +131,37 @@ public class CandyCrush {
 		return false;
 	}
 	
-	
 	public static boolean peutEchanger(char [][] plateau, String cases){
-		
+		if(cases.length()>4 || cases.equals("")){
+			System.out.println(cases.length());
+			return false;
+		}
+		if(casesAdjacentes(cases)){
+			return true;
+		}
 		return false;
 	}
 	
-	
+	public static char [][] echangeCoordonnees(char [][] plateau, String cases){
+		char [][] resultat = plateau;
+		int [] trans = translate(cases);
+		
+		char temp = ' ';
+		
+		temp = resultat[trans[0]-1][trans[1]-1];
+		
+		resultat[trans[0]-1][trans[1]-1] = resultat[trans[2]-1][trans[3]-1];
+		resultat[trans[2]-1][trans[3]-1] = temp;
+		return resultat;
+	}
 	
 	public static void main(String [] args){
 		char [][] plateau = initialisation();
 		affichage(plateau);
-		
+		if(peutEchanger(plateau, "A7B7")){
+			plateau = echangeCoordonnees(plateau, "A7B7");
+		}
+		affichage(plateau);
 	}
 	
 }
