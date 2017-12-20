@@ -68,14 +68,79 @@ public class CandyCrush {
 		
 	}
 	
+	/**
+	 * Boite à outils transformant mes lettres en int
+	 * @param x
+	 * @return
+	 */
+	public static int translate(char x){
+		switch (x) {
+		case 'A':
+			return 1;
+		case 'B':
+			return 2;
+		case 'C':
+			return 3;
+		case 'D':
+			return 4;
+		case 'E':
+			return 5;
+		default:
+			break;
+		}
+		return 0;
+	}
+	
+	/**
+	 * Je regarde si les 2 cases données par l'utilisateur sont bien adjacentes
+	 * @param cases
+	 * @return
+	 */
+	public static boolean casesAdjacentes(String cases){
+		char ligneChar1 = cases.charAt(0);
+		int ligne1 = translate(ligneChar1);
+		char colonneChar1 = cases.charAt(1);
+		int colonne1 = colonneChar1-48;
+		
+		char ligneChar2 = cases.charAt(2);
+		int ligne2 = translate(ligneChar2);;
+		char colonneChar2 = cases.charAt(3);
+		int colonne2 = colonneChar2-48;
+		
+		if(ligne1 == ligne2){
+			if(colonne1==colonne2-1){
+				return true;
+			}else if(colonne1==colonne2+1){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		
+		if(colonne1 == colonne2){
+			if(ligne1==ligne2-1){
+				return true;
+			}else if(ligne1==ligne2+1){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		
+		return false;
+	}
+	
+	
+	public static boolean peutEchanger(char [][] plateau, String cases){
+		
+		return false;
+	}
+	
 	
 	
 	public static void main(String [] args){
-		char [][] init = initialisation();
-		affichage(init);
-		
-		
-		
+		char [][] plateau = initialisation();
+		affichage(plateau);
 		
 	}
 	
