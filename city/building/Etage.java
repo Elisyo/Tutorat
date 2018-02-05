@@ -1,4 +1,4 @@
-package location;
+package city.building;
 import java.util.ArrayList;
 import java.util.List;
 

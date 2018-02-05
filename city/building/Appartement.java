@@ -1,6 +1,8 @@
-package location;
+package city.building;
 
 import java.util.List;
+
+import city.people.Personne;
 
 public class Appartement {
 

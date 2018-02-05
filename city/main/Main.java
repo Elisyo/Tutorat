@@ -1,7 +1,11 @@
-package location;
+package city.main;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import city.building.Appartement;
+import city.building.Etage;
+import city.building.Immeuble;
 
 public class Main {
 

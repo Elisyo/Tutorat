@@ -1,4 +1,4 @@
-package location;
+package city.people;
 
 public class Personne {
 
