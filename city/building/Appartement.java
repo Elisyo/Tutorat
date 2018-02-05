@@ -1,34 +1,64 @@
 package city.building;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import city.people.Personne;
+import city.people.LeaseHolder;
+import city.people.Owner;
+import city.people.Resident;
 
 public class Appartement {
 
-	private Personne owner;
-	private List<Personne> residents;
+	private int number;
+	private Owner owner;
+	private LeaseHolder leaseHolder;
+	private List<Resident> residents = new ArrayList<Resident>();
 	
-	public Appartement() {
+	public Appartement(int number) {
+		this.number=number;
 	}
 	
-	public Appartement(Personne owner) {
-		this.owner = owner;
+	@Override
+	public String toString() {
+		String myToString = "Appartement " + number;
+		
+		if(owner!=null) {
+			myToString = myToString + "; proprio : " + owner;
+		}
+		if(leaseHolder!=null){
+			myToString = myToString + "; locataire : " + leaseHolder;
+		}
+		if(residents.size()!=0) {
+			myToString = myToString + "; liste des habitants : " + residents; 
+		}
+		return myToString;
 	}
 
-	public Personne getOwner() {
+	public int getNumber() {
+		return number;
+	}
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public Owner getOwner() {
 		return owner;
 	}
-
-	public void setOwner(Personne owner) {
+	public void setOwner(Owner owner) {
 		this.owner = owner;
 	}
 
-	public List<Personne> getResidents() {
-		return residents;
+	public LeaseHolder getLeaseHolder() {
+		return leaseHolder;
+	}
+	public void setLeaseHolder(LeaseHolder leaseHolder) {
+		this.leaseHolder = leaseHolder;
 	}
 
-	public void setResidents(List<Personne> residents) {
+	public List<Resident> getResidents() {
+		return residents;
+	}
+	public void setResidents(List<Resident> residents) {
 		this.residents = residents;
 	}
 }

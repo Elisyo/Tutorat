@@ -1,13 +1,13 @@
 package city.people;
 
-public class Personne {
+public class Person {
 
 	private String firstname;
 	private String lastname;
 	
-	public Personne (String firstname, String lastname){
+	public Person (String firstname, String lastname){
 		this.firstname=firstname;
-		this.lastname=lastname;
+		this.lastname=lastname.toUpperCase();
 	}
 
 	public String getFirstname() {
