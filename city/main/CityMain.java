@@ -50,7 +50,7 @@ public class CityMain {
 	}
 	
 	public static void manageBuildings() {
-		boolean goodUser = true;
+		boolean goodUser = false;
 		System.out.println("======================== Gestion des batiments ========================");
 		do {
 			System.out.println("Que voulez-vous faire ?");
@@ -59,6 +59,7 @@ public class CityMain {
 			System.out.println("3. Gérer un batiment");
 			System.out.println("4. Supprimer un batiment");
 			System.out.println("5. Supprimer tous les batiments");
+			System.out.println("6. Retourner au menu");
 			System.out.println("Merci d'indiquer le numéro correspondant.");
 			
 			String str = sc.nextLine();
@@ -77,6 +78,9 @@ public class CityMain {
 				break;
 			case "5":
 				imbs.clear();
+				break;
+			case "6":
+				goodUser=true;
 				break;
 			default:
 				System.out.println("Merci de rentrer une valeur entre 1 et 5.");
