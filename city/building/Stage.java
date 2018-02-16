@@ -3,12 +3,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Etage {
+public class Stage {
 
 	private String numEtage;
 	private List<Appartement> appartements = new ArrayList<Appartement>();
 
-	public Etage(String numero){
+	public Stage(String numero){
 		if(numero.equals("0")) {
 			this.numEtage = "RDC";
 		} else {

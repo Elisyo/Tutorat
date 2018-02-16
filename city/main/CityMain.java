@@ -5,19 +5,19 @@ import java.util.List;
 import java.util.Scanner;
 
 import city.building.Appartement;
-import city.building.Etage;
-import city.building.Immeuble;
+import city.building.Stage;
+import city.building.Flat;
 import city.people.Owner;
 
 public class CityMain {
 
-	static List<Immeuble> imbs;
+	static List<Flat> imbs;
 	static List<?> persons;
 	
 	static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String [] args ){
-		imbs = new ArrayList<Immeuble>();
+		imbs = new ArrayList<Flat>();
 		persons = new ArrayList<>();
 		menu();
 	}
@@ -106,7 +106,7 @@ public class CityMain {
 			
 			switch (sure) {
 			case "1":
-				imbs.add(new Immeuble(adress));
+				imbs.add(new Flat(adress));
 				goodUser=true;
 				break;
 			case "2":

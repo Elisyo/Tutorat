@@ -3,12 +3,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Immeuble {
+public class Flat {
 
 	private String address;
-	private List<Etage> etages = new ArrayList<Etage>();
+	private List<Stage> etages = new ArrayList<Stage>();
 
-	public Immeuble(String address){
+	public Flat(String address){
 		this.address = address;
 		initEtages();
 	}
@@ -17,7 +17,7 @@ public class Immeuble {
 		Random r = new Random();
 		int valeur = 2 + r.nextInt(5 - 2);
 		for (int i = 0; i < valeur; i++) {
-			etages.add(new Etage(i+""));
+			etages.add(new Stage(i+""));
 		}
 	}
 	
@@ -28,10 +28,10 @@ public class Immeuble {
 		this.address = address;
 	}
 
-	public List<Etage> getEtages() {
+	public List<Stage> getEtages() {
 		return etages;
 	}
-	public void setEtages(List<Etage> etages) {
+	public void setEtages(List<Stage> etages) {
 		this.etages = etages;
 	}
 	
