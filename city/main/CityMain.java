@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import city.bank.Bank;
 import city.building.Appartement;
 import city.building.Stage;
 import city.building.Flat;
@@ -13,12 +14,14 @@ public class CityMain {
 
 	static List<Flat> imbs;
 	static List<?> persons;
+	static Bank bank;
 	
 	static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String [] args ){
 		imbs = new ArrayList<Flat>();
 		persons = new ArrayList<>();
+		bank = new Bank();
 		menu();
 	}
 
