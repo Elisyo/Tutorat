@@ -32,7 +32,8 @@ public class CityMain {
 			System.out.println("Que voulez-vous faire ?");
 			System.out.println("1. Gérer les batiments");
 			System.out.println("2. Gérer les personnes");
-			System.out.println("3. Quitter l'application");
+			System.out.println("3. Gérer la banque");
+			System.out.println("4. Quitter l'application");
 			System.out.println("Merci d'indiquer le numéro correspondant.");
 			String str = sc.nextLine();
 			switch (str) {
@@ -43,10 +44,13 @@ public class CityMain {
 				managePerson();
 				break;
 			case "3":
+				manageBank();
+				break;
+			case "4":
 				exit = true;
 				break;
 			default:
-				System.out.println("Merci de rentrer une valeur entre 1 et 3.");
+				System.out.println("Merci de rentrer une valeur entre 1 et 4.");
 				break;
 			}
 		}while(!exit);
@@ -86,7 +90,7 @@ public class CityMain {
 				goodUser=true;
 				break;
 			default:
-				System.out.println("Merci de rentrer une valeur entre 1 et 5.");
+				System.out.println("Merci de rentrer une valeur entre 1 et 6.");
 				goodUser=false;
 				break;
 			}
@@ -166,6 +170,51 @@ public class CityMain {
 
 			default:
 				System.out.println("Merci de rentrer une valeur entre 1 et 4.");
+				goodUser=false;
+				break;
+			}
+		}while(!goodUser);
+	}
+	
+	private static void manageBank() {
+		boolean goodUser = false;
+		System.out.println("======================== Gestion de la banque ========================");
+		do {
+			System.out.println("Que voulez-vous faire ?");
+			System.out.println("1. Créer un client");
+			System.out.println("2. Voir tous les clients");
+			System.out.println("3. Gérer un client");
+			System.out.println("4. Supprimer un client");
+			System.out.println("5. Supprimer tous les clients");
+			System.out.println("6. Faire un transfert d'argent");
+			System.out.println("7. Retourner au menu");
+			System.out.println("Merci d'indiquer le numéro correspondant.");
+			
+			String str = sc.nextLine();
+			switch (str) {
+			case "1":
+				//creer un client
+				break;
+			case "2":
+				System.out.println("Liste des immeubles : \n"+bank.getClients());
+				break;
+			case "3":
+				// gestion d'un batiment
+				break;
+			case "4":
+				// supprimer un batiment
+				break;
+			case "5":
+				imbs.clear();
+				break;
+			case "6":
+				goodUser=true;
+				break;
+			case "7":
+				goodUser=true;
+				break;
+			default:
+				System.out.println("Merci de rentrer une valeur entre 1 et 7.");
 				goodUser=false;
 				break;
 			}
