@@ -1,0 +1,58 @@
+1) Quelle collection vous permet d'augmenter ou de réduire sa taille et offre un accès indexé à ses éléments ?
+- un tableau
++ une liste
+
+
+2) A quoi renvoi la méthode Math. random()  ?
+- un "int"
+- un "float"
++ un "double"
+- un "long"
+
+
+3) Lequel est un exemple de polymorphisme ?
+- Les classes internes
+- Classes anonymes
+- La surcharge de méthode
++ La redéfinition de méthode
+
+
+4) Quel énoncé Java est utilisé pour annuler complètement l'exécution d'une boucle ?
+- continue
+- goto
+- exit
++ break
+
+
+5) Lesquels des énoncés suivants peuvent suivre le mot-clé static  ?
+- Les définitions de classe
++ Champs membres de la classe
++ Méthodes membres de la classe
++ Les blocs de code entre accolades
+
+
+6) Lequel des énoncés suivants peut être déclaré final  ?
++ Classes
++ Champs membres de la classe
++ Méthodes membres de la classe
+
+7) Quel mot clé permet d'obtenir une référence sur l'objet courant ?
+- Current
+- Object
+- Super
++ This
+
+8) Le mot clé protected associé à une variable ou méthode  :
+- Sert à interdir tout usage externe à la classe 
+- Sert à donner le maximum de visibilité
++ Donne un niveau de visibilité aux classes fille
+
+9) Le polymorphisme sert à  :
+- Rendre abstraite une classe concrète
+- Se passer des interfaces
++ Standardiser les relations entre objets de nature distincte
+
+10) L'opérateur new  :
++ Sert à fabriquer un objet à l'aide d'un constructeur défini dans une classe
+- Sert à initialiser une nouvelle classe 
+- Ne s'emploie que pour les accès statiques 
